@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Madame T | The Foot Gawd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: #FBF5EE; color: #2B1B24; }
+
+    /* NAV */
+    nav {
+      background: #2B1B24;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      color: #C9A24D;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: #FBF5EE;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #C9A24D; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #4A1942 0%, #2B1B24 100%);
+      color: #FBF5EE;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #C9A24D;
+      margin-bottom: 10px;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #E8A0BF;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .hero p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      color: #FBF5EE;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      background: #C9A24D;
+      color: #2B1B24;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+      margin: 8px;
+    }
+    .btn:hover { background: #E8A0BF; transform: translateY(-2px); }
+    .btn.outline {
+      background: transparent;
+      border: 2px solid #C9A24D;
+      color: #C9A24D;
+    }
+    .btn.outline:hover { background: #C9A24D; color: #2B1B24; }
+
+    /* SECTIONS */
+    section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #4A1942;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #2B1B24;
+      opacity: 0.7;
+      margin-bottom: 50px;
+      font-size: 0.95rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #4A1942;
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      line-height: 1.9;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+    .about-img {
+      background: linear-gradient(135deg, #4A1942, #E8A0BF);
+      border-radius: 20px;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #FBF5EE;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* BUNDLES */
+    .bundles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .bundle-card {
+      background: #fff;
+      border: 2px solid #E8A0BF;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .bundle-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(74,25,66,0.15);
+    }
+    .bundle-card .tier {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #E8A0BF;
+      margin-bottom: 8px;
+    }
+    .bundle-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #4A1942;
+      margin-bottom: 10px;
+    }
+    .bundle-card .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #C9A24D;
+      margin-bottom: 12px;
+    }
+    .bundle-card p {
+      font-size: 0.82rem;
+      color: #2B1B24;
+      opacity: 0.75;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* ACADEMY */
+    .academy-box {
+      background: linear-gradient(135deg, #4A1942 0%, #2B1B24 100%);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      color: #FBF5EE;
+    }
+    .academy-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #C9A24D;
+      margin-bottom: 16px;
+    }
+    .academy-box p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    /* BOOKING */
+    .booking-box {
+      background: #FBF5EE;
+      border: 2px solid #C9A24D;
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .booking-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #4A1942;
+      margin-bottom: 16px;
+    }
+    .booking-box p {
+      max-width: 580px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .step {
+      background: #4A1942;
+      color: #FBF5EE;
+      border-radius: 12px;
+      padding: 20px;
+      width: 160px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .step span {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2B1B24;
+      color: #FBF5EE;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    footer .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #C9A24D;
+      margin-bottom: 10px;
+    }
+    footer a { color: #E8A0BF; text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      nav ul { gap: 16px; }
+      .steps { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Madame T 👑</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#academy">Academy</a></li>
+      <li><a href="#booking">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Madame T</h1>
+    <h2>The Foot Gawd 👑</h2>
+    <p>Welcome to the empire. Premium foot content, exclusive bundles, and the tools to help you build your own foot empire from the ground up.</p>
+    <a href="#bundles" class="btn">Shop Bundles</a>
+    <a href="#booking" class="btn outline">Book a Call</a>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Madame T</h2>
+    <p class="section-sub">The Foot Gawd. The Brand. The Empire.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Build Your Foot Empire 👠</h3>
+        <p>I'm Madame T — content creator, coach, and the original Foot Gawd. I've built a thriving business from premium foot content and I'm here to show you exactly how to do the same.</p>
+        <p>Whether you're here for exclusive content bundles or to learn the business side of the foot content world, you've found your home.</p>
+        <p>Follow me on Instagram <a href="https://instagram.com/madametbennett" target="_blank" style="color:#4A1942;font-weight:600;">@madametbennett</a> for daily content and behind-the-scenes access.</p>
+        <a href="#academy" class="btn" style="margin-top:10px;">Join the Academy</a>
+      </div>
+      <div class="about-img">
+        ✨ Madame T<br/>The Foot Gawd<br/><br/>
+        <small style="opacity:0.8;">📸 @madametbennett</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLES -->
+  <section id="bundles" style="background:#fff; max-width:100%; padding:80px 40px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 class="section-title">Premium Bundles</h2>
+      <p class="section-sub">From tease to crown — find your tier 👑</p>
+      <div class="bundles-grid">
+        <div class="bundle-card">
+          <div class="tier">Tier 1</div>
+          <h3>The Tease</h3>
+          <div class="price">$49.99</div>
+          <p>The perfect intro. Exclusive photos and a taste of the empire.</p>
+          <a href="#booking" class="btn">Get Access</a>
+        </div>
+        <div class="bundle-card">
+          <div class="tier">Tier 2</div>
+          <h3>The Indulgence</h3>
+          <div class="price">$74.99</div>
+          <p>More content, more access. Step into the experience.</p>
+          <a href="#booking" class="btn">Get Access</a>
+        </div>
+        <div class="bundle-card">
+          <div class="tier">Tier 3</div>
+          <h3>The Obsession</h3>
+          <div class="price">$99.99</div>
+          <p>Premium curated content for the dedicated fan.</p>
+          <a href="#booking" class="btn">Get Access</a>
+        </div>
+        <div class="bundle-card" style="border-color:#C9A24D;">
+          <div class="tier" style="color:#C9A24D;">⭐ Top Tier</div>
+          <h3>THE CROWN</h3>
+          <div class="price">$174.99</div>
+          <p>The ultimate experience. Full access + personal video call included.</p>
+          <a href="#booking" class="btn">Get Access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMY -->
+  <section id="academy">
+    <div class="academy-box">
+      <h3>🎓 The Foot Empire Academy</h3>
+      <p>Ready to turn your feet into a business? The Academy teaches you everything — from setting up your profiles to pricing, marketing, and scaling your income. Built by the Foot Gawd herself.</p>
+      <a href="mailto:hello@madametfootgawd.com" class="btn">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="booking-box">
+      <h3>📅 Book a Video Call</h3>
+      <p>Ready for a private 1-on-1 experience? Here's how it works:</p>
+      <div class="steps">
+        <div class="step"><span>1️⃣</span>Book your slot via the link below</div>
+        <div class="step"><span>2️⃣</span>Send payment via Zelle</div>
+        <div class="step"><span>3️⃣</span>Receive your Google Meet link automatically</div>
+      </div>
+      <a href="https://cal.com/madamet" class="btn" target="_blank">Book Your Call Now 👑</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Madame T | The Foot Gawd 👑</div>
+    <p>© 2026 Bennett Enterprise Holdings, LLC. All rights reserved.</p>
+    <p style="margin-top:8px;">
+      <a href="https://instagram.com/madametbennett" target="_blank">Instagram: @madametbennett</a>
+    </p>
+    <p style="margin-top:12px; font-size:0.75rem; opacity:0.6;">
+      All content is intended for adults 18+. By accessing this site you confirm you are of legal age.
+    </p>
+  </footer>
+
+</body>
+</html>
