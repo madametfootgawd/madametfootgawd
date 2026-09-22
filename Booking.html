@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book With Madame T | The Foot Gawd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --plum:      #4A1942;
+      --rose:      #E8A0BF;
+      --gold:      #C9A24D;
+      --cream:     #FBF5EE;
+      --espresso:  #2B1B24;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--espresso);
+    }
+
+    /* HEADER */
+    header {
+      background: var(--plum);
+      text-align: center;
+      padding: 48px 24px 36px;
+    }
+    header .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: var(--rose); }
+    header p {
+      font-size: 14px;
+      color: var(--rose);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .gold-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    /* INTRO */
+    .intro {
+      text-align: center;
+      padding: 48px 24px 32px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--plum);
+      margin-bottom: 14px;
+    }
+    .intro p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #5a3d52;
+    }
+
+    /* TABS */
+    .tabs-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .tab-btn {
+      background: white;
+      border: 2px solid var(--plum);
+      color: var(--plum);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+    .tab-btn:hover {
+      background: var(--plum);
+      color: var(--cream);
+    }
+    .tab-btn.active {
+      background: var(--plum);
+      color: var(--cream);
+      box-shadow: 0 4px 20px rgba(74,25,66,0.3);
+    }
+    .tab-btn .price-tag {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gold);
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+    }
+    .tab-btn.active .price-tag { color: var(--rose); }
+
+    /* TAB PANELS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .panel-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .panel-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--plum);
+      margin-bottom: 8px;
+    }
+    .panel-header .duration-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .panel-header p {
+      font-size: 14px;
+      color: #5a3d52;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* CALENDAR CONTAINER */
+    .cal-container {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(74,25,66,0.12);
+      border: 1px solid rgba(74,25,66,0.08);
+      min-height: 600px;
+    }
+
+    #my-cal-inline-15min,
+    #my-cal-inline-30min,
+    #my-cal-inline-the-vip-session {
+      width: 100%;
+      height: 650px;
+      overflow: scroll;
+    }
+
+    /* ZELLE NOTICE */
+    .zelle-notice {
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--plum), #6b2860);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--cream);
+    }
+    .zelle-notice .icon { font-size: 28px; flex-shrink: 0; }
+    .zelle-notice p { font-size: 13px; line-height: 1.6; }
+    .zelle-notice strong { color: var(--gold); }
+
+    /* FOOTER */
+    footer {
+      background: var(--espresso);
+      text-align: center;
+      padding: 32px 24px;
+      color: #a07890;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    footer span { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <p class="eyebrow">Madame T &nbsp;|&nbsp; The Foot Gawd</p>
+    <h1>Book Your <span>Private Session</span></h1>
+    <p>Build Your Foot Empire</p>
+    <div class="gold-divider"></div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>Choose Your Experience</h2>
+    <p>Select the session that fits your desires. All bookings are confirmed via Zelle payment — your private Google Meet link is sent automatically once payment is received.</p>
+  </section>
+
+  <!-- TABS -->
+  <section class="tabs-wrapper">
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('quickie', this)">
+        &#128 The Quickie
+        <span class="price-tag">15 min &middot; $60</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('experience', this)">
+        &#128081; The Experience
+        <span class="price-tag">30 min &middot; $110</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('vip', this)">
+        &#128142; The VIP Session
+        <span class="price-tag">60 min &middot; $170</span>
+      </button>
+    </div>
+
+    <!-- PANEL: 15 MIN -->
+    <div class="tab-panel active" id="panel-quickie">
+      <div class="panel-header">
+        <div class="duration-badge">15 Minutes</div>
+        <h3>&#128 The Quickie &mdash; $60</h3>
+        <p>A fast, intimate peek. Perfect for first-timers who want a taste of the experience before going deeper.</p>
+      </div>
+      <div class="cal-container">
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-15min"></div>
+      </div>
+      <div class="zelle-notice">
+        <div class="icon">&#128184;</div>
+        <p><strong>How to confirm your booking:</strong> After selecting your time, send <strong>$60 via Zelle</strong> to confirm. Your private Google Meet link will be sent automatically once payment is received.</p>
+      </div>
+    </div>
+
+    <!-- PANEL: 30 MIN -->
+    <div class="tab-panel" id="panel-experience">
+      <div class="panel-header">
+        <div class="duration-badge">30 Minutes</div>
+        <h3>&#128081; The Experience &mdash; $110</h3>
+        <p>The full experience. Indulge in a private, luxurious session tailored entirely to you.</p>
+      </div>
+      <div class="cal-container">
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+      </div>
+      <div class="zelle-notice">
+        <div class="icon">&#128184;</div>
+        <p><strong>How to confirm your booking:</strong> After selecting your time, send <strong>$110 via Zelle</strong> to confirm. Your private Google Meet link will be sent automatically once payment is received.</p>
+      </div>
+    </div>
+
+    <!-- PANEL: 60 MIN -->
+    <div class="tab-panel" id="panel-vip">
+      <div class="panel-header">
+        <div class="duration-badge">60 Minutes</div>
+        <h3>&#128142; The VIP Session &mdash; $170</h3>
+        <p>The ultimate luxury. A full hour of exclusive, personalized attention. Reserved for those who want nothing but the best.</p>
+      </div>
+      <div class="cal-container">
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-the-vip-session"></div>
+      </div>
+      <div class="zelle-notice">
+        <div class="icon">&#128184;</div>
+        <p><strong>How to confirm your booking:</strong> After selecting your time, send <strong>$170 via Zelle</strong> to confirm. Your private Google Meet link will be sent automatically once payment is received.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <span>Madame T | The Foot Gawd</span> &nbsp;&middot;&nbsp; All Rights Reserved &nbsp;&middot;&nbsp; Bennett Enterprise Holdings, LLC</p>
+  </footer>
+
+  <!-- CAL.COM EMBED SCRIPTS -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    // 15 MIN
+    Cal("init", "15min", {origin:"https://app.cal.com"});
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns["15min"]("inline", {
+      elementOrSelector:"#my-cal-inline-15min",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "madame-t-foot-gawd/15min",
+    });
+    Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4A1942"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+    // 30 MIN
+    Cal("init", "30min", {origin:"https://app.cal.com"});
+    Cal.ns["30min"]("inline", {
+      elementOrSelector:"#my-cal-inline-30min",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "madame-t-foot-gawd/30min",
+    });
+    Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4A1942"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+    // 60 MIN
+    Cal("init", "the-vip-session", {origin:"https://app.cal.com"});
+    Cal.ns["the-vip-session"]("inline", {
+      elementOrSelector:"#my-cal-inline-the-vip-session",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "madame-t-foot-gawd/the-vip-session",
+    });
+    Cal.ns["the-vip-session"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4A1942"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <!-- TAB SWITCHING LOGIC -->
+  <script>
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
